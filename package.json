@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "export": "next build && next export",
-    "deploy": "npm run build && touch out/.nojekyll && git add -f out/ && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix out origin gh-pages",
+    "build:vercel": "next build",
+    "export": "GITHUB_PAGES=true next build && next export",
+    "deploy:github": "npm run export && touch out/.nojekyll && git add -f out/ && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix out origin gh-pages",
     "start": "next start",
     "lint": "eslint"
   },

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, Users, Calendar, MapPin, Mail, Phone } from 'lucide-react';
+import { BookOpen, Users, Calendar, MapPin, Mail, Phone, MessageCircle } from 'lucide-react';
 
 export default function AboutCourseSection() {
   return (
@@ -110,23 +110,37 @@ export default function AboutCourseSection() {
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 flex-shrink-0" />
-                  <div>
+                  <div className="flex-1">
                     <p className="text-white font-semibold text-sm sm:text-base">Celular</p>
-                    <p className="text-gray-300 text-xs sm:text-sm">950600024</p>
+                    <p className="text-gray-300 text-xs sm:text-sm">+51 984 009 253</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-green-400 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-white font-semibold text-sm sm:text-base">WhatsApp</p>
+                    <a 
+                      href="https://wa.me/51984009253" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-green-400 text-xs sm:text-sm hover:text-green-300 transition-colors duration-200 underline"
+                    >
+                      +51 984 009 253
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-400 flex-shrink-0" />
                   <div>
                     <p className="text-white font-semibold text-sm sm:text-base">Correo</p>
-                    <p className="text-gray-300 text-xs sm:text-sm break-all">michel.palma.vargas@gmail.com</p>
+                    <p className="text-gray-300 text-xs sm:text-sm break-all">michelpv71@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 sm:space-x-4">
                   <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-blue-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-white font-semibold text-sm sm:text-base">Ubicación</p>
-                    <p className="text-gray-300 text-xs sm:text-sm">Jr. Arequipa 515 int 04, Abancay, Perú</p>
+                    <p className="text-gray-300 text-xs sm:text-sm">Jirón Cusco Nro 718, Abancay</p>
                   </div>
                 </div>
               </div>

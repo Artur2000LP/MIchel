@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter, Youtube, MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function ContactSection() {
@@ -69,8 +69,26 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Teléfono</h4>
-                    <p className="text-gray-300">950600024</p>
+                    <p className="text-gray-300">+51 984 009 253</p>
                     <p className="text-sm text-gray-400">Disponible de 8:00 AM a 6:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="h-6 w-6 text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">WhatsApp</h4>
+                    <a 
+                      href="https://wa.me/51984009253"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-400 hover:text-green-300 transition-colors duration-200"
+                    >
+                      +51 984 009 253
+                    </a>
+                    <p className="text-sm text-gray-400">Contacto directo por WhatsApp</p>
                   </div>
                 </div>
 
@@ -81,10 +99,10 @@ export default function ContactSection() {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Correo Electrónico</h4>
                     <a 
-                      href="mailto:michel.palma.vargas@gmail.com"
+                      href="mailto:michelpv71@gmail.com"
                       className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                     >
-                      michel.palma.vargas@gmail.com
+                      michelpv71@gmail.com
                     </a>
                     <p className="text-sm text-gray-400">Respuesta en 24 horas</p>
                   </div>
@@ -96,8 +114,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Ubicación</h4>
-                    <p className="text-gray-300">Jr. Arequipa 515 int 04</p>
-                    <p className="text-gray-300">Abancay, Perú</p>
+                    <p className="text-gray-300">Jirón Cusco Nro 718</p>
+                    <p className="text-gray-300">Abancay</p>
                   </div>
                 </div>
               </div>
@@ -177,7 +195,7 @@ export default function ContactSection() {
                 />
               </div>
               <p className="text-sm text-gray-400 mt-3">
-                Jr. Arequipa 515 int 04, Abancay, Apurímac, Perú
+                Jirón Cusco Nro 718, Abancay, Apurímac, Perú
               </p>
             </div>
 
