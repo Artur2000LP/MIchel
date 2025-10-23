@@ -20,10 +20,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Brain className="h-8 w-8 text-blue-400" />
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              TICs - IA & Innovación Educativa
-            </span>
+            {/* Logo eliminado - espacio reservado */}
           </div>
 
           {/* Desktop Navigation */}

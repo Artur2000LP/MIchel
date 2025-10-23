@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, Sparkles, Zap, BookOpen } from 'lucide-react';
+import { GraduationCap, Sparkles, Zap, BookOpen } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -62,69 +62,97 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-12"
         >
           <div className="flex justify-center mb-6">
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              animate={{ 
+                y: [0, -10, 0],
+                rotateY: [0, 180, 360]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
               className="relative"
             >
-              <Brain className="h-20 w-20 text-blue-400" />
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+              <div className="relative bg-gradient-to-r from-blue-400 to-cyan-400 p-4 rounded-2xl shadow-2xl">
+                <GraduationCap className="h-16 w-16 text-slate-900" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/30 to-cyan-400/30 rounded-3xl blur-lg animate-pulse" />
+              </div>
             </motion.div>
           </div>
           
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-              TICs
-            </span>
-            <br />
-            <span className="text-white">Inteligencia Artificial</span>
-            <br />
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Innovación Educativa
+              TICs - IA & Innovación Educativa
             </span>
           </h1>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
-        >
-          Portafolio del curso de Inteligencia Artificial aplicada a la innovación educativa. 
-          Explorando herramientas, sesiones de aprendizaje y aplicaciones prácticas de la IA en el aula.
-        </motion.p>
-
-        {/* Feature Cards */}
+        {/* Instructor Profile */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4"
+          className="mb-8 sm:mb-12 px-4"
         >
-          <div className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-            <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-400 mb-3 sm:mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">5 Sesiones</h3>
-            <p className="text-sm sm:text-base text-gray-400">Contenido completo del curso con videos y PDFs</p>
-          </div>
-          
-          <div className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
-            <Sparkles className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-cyan-400 mb-3 sm:mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Herramientas IA</h3>
-            <p className="text-sm sm:text-base text-gray-400">Aplicaciones y herramientas de inteligencia artificial</p>
-          </div>
-          
-          <div className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-            <Zap className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-400 mb-3 sm:mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Innovación</h3>
-            <p className="text-sm sm:text-base text-gray-400">Transformando la educación con tecnología</p>
+          <div className="max-w-4xl mx-auto bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              {/* Profile Image */}
+              <div className="relative">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-cyan-400 p-1 bg-gradient-to-r from-blue-400 to-cyan-400">
+                  <img
+                    src="/miPerfil/fotoMichet.jpeg"
+                    alt="Mtro. Ing. Michel Palma Vargas"
+                    className="w-full h-full object-cover rounded-full bg-slate-800"
+                  />
+                </div>
+                {/* Online indicator */}
+                <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-400 rounded-full border-4 border-slate-900 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+
+              {/* Profile Info */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    Mtro. Ing. Michel Palma Vargas
+                  </h2>
+                  <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-3">
+                    <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30">
+                      Especialista en IA Educativa
+                    </span>
+                    <span className="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-medium border border-cyan-500/30">
+                      Innovación Tecnológica
+                    </span>
+                  </div>
+                </div>
+
+
+                {/* Quick Stats */}
+                <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <BookOpen className="h-4 w-4 text-blue-400" />
+                    <span>5+ Años Experiencia</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Sparkles className="h-4 w-4 text-cyan-400" />
+                    <span>Especialista UNESCO</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Zap className="h-4 w-4 text-blue-400" />
+                    <span>Innovador Educativo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Casual */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,13 +161,13 @@ export default function HeroSection() {
         >
           <a
             href="#sesiones"
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base text-center"
+            className="bg-slate-800/50 text-gray-300 px-5 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-slate-700/60 hover:text-white transition-all duration-200 text-sm sm:text-base text-center border border-slate-700/50"
           >
             Ver Sesiones del Curso
           </a>
           <a
             href="#aplicaciones-ia"
-            className="border border-blue-500 text-blue-400 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm sm:text-base text-center"
+            className="bg-slate-800/30 text-gray-400 px-5 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-slate-800/50 hover:text-gray-300 transition-all duration-200 text-sm sm:text-base text-center border border-slate-600/30"
           >
             Explorar Aplicaciones IA
           </a>

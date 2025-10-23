@@ -2,7 +2,7 @@ import Navigation from '@/components/ui/Navigation';
 import HeroSection from '@/components/sections/HeroSection';
 import CourseSessionsSection from '@/components/sections/CourseSessionsSection';
 import AIApplicationsSection from '@/components/sections/AIApplicationsSection';
-import AboutCourseSection from '@/components/sections/AboutCourseSection';
+import AboutCourseSection from '@/components/sections/SesionesZoom';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
