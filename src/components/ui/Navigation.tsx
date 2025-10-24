@@ -1,18 +1,45 @@
 'use client';
 
-import { useState } from 'react';
-import { Menu, X, Brain, BookOpen, Cpu, Phone } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Home, Video, Calendar, Cpu, Phone } from 'lucide-react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
-    { name: 'Inicio', href: '#hero', icon: Brain },
-    { name: 'Sobre el Curso', href: '#about-course', icon: BookOpen },
-    { name: 'Sesiones', href: '#sesiones', icon: BookOpen },
-    { name: 'Aplicaciones IA', href: '#aplicaciones-ia', icon: Cpu },
-    { name: 'Contacto', href: '#contact', icon: Phone },
+    { name: 'Inicio', href: '#hero', icon: Home, section: 'hero' },
+    { name: 'Zoom', href: '#about-course', icon: Video, section: 'about-course' },
+    { name: 'Sesiones', href: '#sesiones', icon: Calendar, section: 'sesiones' },
+    { name: 'Aplicaciones IA', href: '#aplicaciones-ia', icon: Cpu, section: 'aplicaciones-ia' },
+    { name: 'Contacto', href: '#contact', icon: Phone, section: 'contact' },
   ];
+
+  // Detectar la sección activa basándose en el scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => item.section);
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Ejecutar una vez al montar
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-sm border-b border-blue-500/20">
@@ -25,17 +52,24 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="flex items-center space-x-1 text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                <item.icon className="h-4 w-4" />
-                <span>{item.name}</span>
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.section;
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center space-x-1 transition-all duration-300 ${
+                    isActive 
+                      ? 'text-cyan-400' 
+                      : 'text-gray-400 hover:text-gray-300'
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -53,17 +87,24 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800/95 rounded-lg mt-2">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <item.icon className="h-4 w-4" />
-                  <span>{item.name}</span>
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.section;
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`flex items-center space-x-2 block px-3 py-2 rounded-md transition-all duration-300 ${
+                      isActive 
+                        ? 'text-cyan-400' 
+                        : 'text-gray-400 hover:text-gray-300'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.name}</span>
+                  </a>
+                );
+              })}
             </div>
           </div>
         )}
