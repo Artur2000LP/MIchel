@@ -42,6 +42,26 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    
+    // Smooth scroll to section
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        const navHeight = 64; // Height of fixed navigation
+        const targetPosition = targetElement.offsetTop - navHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100); // Small delay to let menu close animation start
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-sm border-b border-blue-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,12 +79,15 @@ export default function Navigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`flex items-center space-x-1 transition-all duration-300 ${
+                  className={`flex items-center space-x-1 transition-all duration-300 cursor-pointer ${
                     isActive 
                       ? 'text-cyan-400' 
                       : 'text-gray-400 hover:text-gray-300'
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
                 >
                   <item.icon className="h-4 w-4" />
                   <span>{item.name}</span>
@@ -117,12 +140,15 @@ export default function Navigation() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.2, delay: index * 0.05 }}
-                      className={`flex items-center space-x-2 block px-3 py-2 rounded-md transition-all duration-300 hover:bg-slate-700/50 ${
+                      className={`flex items-center space-x-2 block px-3 py-2 rounded-md transition-all duration-300 hover:bg-slate-700/50 cursor-pointer ${
                         isActive 
                           ? 'text-cyan-400 bg-blue-500/10' 
                           : 'text-gray-400 hover:text-gray-300'
                       }`}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(item.href);
+                      }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <item.icon className="h-4 w-4" />
