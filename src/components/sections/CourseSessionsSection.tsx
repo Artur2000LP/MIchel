@@ -144,8 +144,27 @@ export default function CourseSessionsSection() {
       // description: "Estrategias de implementación y tendencias futuras de la IA educativa",
       // duration: "120 min",
       // date: "Semana 5",
-      materials: [],
-      completed: false
+      materials: [
+        { 
+          type: "pdf", 
+          name: "Marco de competencias de los docentes en materia de TIC UNESCO", 
+          driveUrl: "https://drive.google.com/file/d/1s6lKYJ6_Iw3UxppgmgXLDpy9lMYmoxQB/view?usp=sharing",
+          downloadUrl: "/INFORMACIÓN TIC/5. SESIÓN 5/Marco_competencias_docentes_TIC_UNESCO.pdf"
+        },
+        { 
+          type: "pdf", 
+          name: "Tendencias sobre Contenidos Educativos Digitales", 
+          driveUrl: "https://drive.google.com/file/d/14HKU3YgOb0KTzOjydpgZ6vknxJf4hSX6/view?usp=sharing",
+          downloadUrl: "/INFORMACIÓN TIC/5. SESIÓN 5/Tendencias_contenidos_educativos_digitales.pdf"
+        },
+        { 
+          type: "audio", 
+          name: "La Brújula Digital", 
+          driveUrl: "https://drive.google.com/file/d/185G8KQGcFjAlS__p5zbQvk77YOEt-5yA/view?usp=sharing",
+          downloadUrl: "/INFORMACIÓN TIC/5. SESIÓN 5/Brujula_digital.mp3"
+        }
+      ],
+      completed: true
     }
   ];
 
@@ -252,9 +271,11 @@ export default function CourseSessionsSection() {
                             </div>
                           </div>
                           
-                          {/* Badge PDF */}
-                          <div className="absolute top-3 right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg">
-                            PDF
+                          {/* Badge dinámico según tipo */}
+                          <div className={`absolute top-3 right-3 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-lg ${
+                            material.type === 'audio' ? 'bg-green-500' : 'bg-red-500'
+                          }`}>
+                            {material.type === 'audio' ? 'AUDIO' : 'PDF'}
                           </div>
                         </div>
                         
@@ -264,12 +285,16 @@ export default function CourseSessionsSection() {
                             {material.name}
                           </p>
                           <div className="flex items-center justify-between mt-2">
-                            <span className="text-xs text-red-600 font-medium bg-red-50 px-2 py-1 rounded">
-                              PDF
+                            <span className={`text-xs font-medium px-2 py-1 rounded ${
+                              material.type === 'audio' 
+                                ? 'text-green-600 bg-green-50' 
+                                : 'text-red-600 bg-red-50'
+                            }`}>
+                              {material.type === 'audio' ? 'AUDIO' : 'PDF'}
                             </span>
                             <span className="text-xs text-gray-500 flex items-center gap-1">
                               <FileText className="w-3 h-3" />
-                              Documento
+                              {material.type === 'audio' ? 'Audio' : 'Documento'}
                             </span>
                           </div>
                         </div>
@@ -308,18 +333,18 @@ export default function CourseSessionsSection() {
         >
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-500/20 p-8">
             <div className="text-center">
-              {/* <h3 className="text-2xl font-bold text-white mb-4">Progreso del Curso</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Progreso del Curso</h3>
               <div className="flex items-center justify-center space-x-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">4/5</div>
+                  <div className="text-3xl font-bold text-blue-400">5/5</div>
                   <div className="text-sm text-gray-400">Sesiones Completadas</div>
                 </div>
                 <div className="w-px h-12 bg-gray-600" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400">80%</div>
+                  <div className="text-3xl font-bold text-cyan-400">100%</div>
                   <div className="text-sm text-gray-400">Progreso Total</div>
                 </div>
-              </div> */}
+              </div>
               
               {/* Progress Bar */}
               <div className="mt-6">
@@ -327,7 +352,7 @@ export default function CourseSessionsSection() {
                   <motion.div
                     className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
                     initial={{ width: 0 }}
-                    whileInView={{ width: "80%" }}
+                    whileInView={{ width: "100%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, delay: 0.5 }}
                   />
