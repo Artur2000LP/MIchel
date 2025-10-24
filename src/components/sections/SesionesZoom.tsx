@@ -67,7 +67,7 @@ export default function SesionesZoomSection() {
   };
 
   return (
-    <div className="py-8 sm:py-12 px-4 sm:px-5 lg:px-9 bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen flex flex-col">
+    <div className="py-8 sm:py-12 px-4 sm:px-5 lg:px-9 bg-slate-900/50 min-h-screen flex flex-col">
       <div className="max-w-7xl mx-auto flex-1">
         {/* Header */}
         <motion.div
