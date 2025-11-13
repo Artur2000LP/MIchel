@@ -18,7 +18,7 @@ export default function AIAgent() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `¡Hola! Soy el asistente virtual de Michel Palma.\n\nPuedo ayudarte con información sobre:\n• Experiencia y proyectos\n• Habilidades técnicas\n• Cursos y servicios\n• Información de contacto\n\n¿Qué te gustaría saber?`,
+      content: `¡Hola! Soy el asistente de Michel Palma.\n\nPuedo ayudarte con:\n• Proyectos y experiencia\n• Habilidades técnicas\n• Cursos y contacto\n\n¿Qué necesitas?`,
       timestamp: Date.now(),
     },
   ]);
@@ -110,20 +110,20 @@ export default function AIAgent() {
       {isOpen && (
         <div
           className={`fixed ${
-            isMinimized ? 'bottom-6 right-6 w-80' : 'bottom-6 right-6 w-96'
+            isMinimized ? 'bottom-6 right-6 w-72' : 'bottom-6 right-6 w-80 lg:w-96'
           } z-50 bg-gray-900 border-2 border-red-700 rounded-lg shadow-2xl shadow-red-900/50 flex flex-col transition-all duration-300 ${
-            isMinimized ? 'h-16' : 'h-[600px]'
+            isMinimized ? 'h-16' : 'h-[550px] lg:h-[600px]'
           }`}
         >
           {/* Header del chat */}
-          <div className="bg-gradient-to-r from-red-900 to-red-800 p-4 rounded-t-lg flex items-center justify-between border-b border-red-700">
-            <div className="flex items-center gap-3">
-              <div className="bg-red-600 rounded-full p-2">
-                <Sparkles className="w-5 h-5 text-white" />
+          <div className="bg-gradient-to-r from-red-900 to-red-800 p-3 rounded-t-lg flex items-center justify-between border-b border-red-700">
+            <div className="flex items-center gap-2">
+              <div className="bg-red-600 rounded-full p-1.5">
+                <Sparkles className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-white">Asistente IA</h3>
-                <p className="text-xs text-red-200">Siempre disponible</p>
+                <h3 className="font-semibold text-white text-sm">Asistente IA</h3>
+                <p className="text-xs text-red-200">En línea</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export default function AIAgent() {
           {!isMinimized && (
             <>
               {/* Área de mensajes */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-950">
+              <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-950">
                 {messages.map((message, index) => (
                   <ChatBubble key={index} message={message} />
                 ))}
@@ -170,8 +170,10 @@ export default function AIAgent() {
               </div>
 
               {/* Sugerencias de preguntas */}
-              {messages.length <= 2 && (
-                <ChatSuggestions onSuggestionClick={handleSuggestionClick} />
+              {messages.length <= 1 && (
+                <div className="px-3">
+                  <ChatSuggestions onSuggestionClick={handleSuggestionClick} />
+                </div>
               )}
 
               {/* Input de mensaje */}

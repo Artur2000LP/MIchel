@@ -18,13 +18,13 @@ function SimpleMarkdown({ content }: { content: string }) {
   const lines = content.split('\n');
   
   return (
-    <div className="text-sm leading-relaxed">
+    <div className="text-sm leading-snug">
       {lines.map((line, index) => {
         // Detectar listas con •
         if (line.trim().startsWith('•')) {
           return (
-            <div key={index} className="flex gap-2 my-1 items-start">
-              <span className="text-red-400 mt-1">▸</span>
+            <div key={index} className="flex gap-2 my-0.5 items-start">
+              <span className="text-red-400 mt-0.5">▸</span>
               <span>{line.trim().substring(1).trim()}</span>
             </div>
           );
@@ -32,8 +32,8 @@ function SimpleMarkdown({ content }: { content: string }) {
         // Detectar listas con -
         if (line.trim().startsWith('-')) {
           return (
-            <div key={index} className="flex gap-2 my-1 items-start">
-              <span className="text-red-400 mt-1">▸</span>
+            <div key={index} className="flex gap-2 my-0.5 items-start">
+              <span className="text-red-400 mt-0.5">▸</span>
               <span>{line.trim().substring(1).trim()}</span>
             </div>
           );
@@ -56,7 +56,7 @@ function SimpleMarkdown({ content }: { content: string }) {
         }
         // Línea normal
         return line.trim() ? (
-          <p key={index} className="mb-2">
+          <p key={index} className="mb-1">
             {line}
           </p>
         ) : (
@@ -71,7 +71,7 @@ export default function ChatBubble({ message }: ChatBubbleProps) {
   const isUser = message.role === 'user';
 
   return (
-    <div className={`flex gap-3 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+    <div className={`flex gap-2 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
       {/* Avatar */}
       <div
         className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
@@ -89,11 +89,11 @@ export default function ChatBubble({ message }: ChatBubbleProps) {
 
       {/* Mensaje */}
       <div
-        className={`flex-1 max-w-[80%] ${
+        className={`flex-1 max-w-[85%] ${
           isUser
             ? 'bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600'
             : 'bg-gradient-to-r from-red-900/50 to-red-800/50 border border-red-700/50'
-        } rounded-lg p-3 shadow-lg`}
+        } rounded-lg p-2.5 shadow-lg`}
       >
         <SimpleMarkdown content={message.content} />
         <div className="text-xs text-gray-500 mt-2">

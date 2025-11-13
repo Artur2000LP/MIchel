@@ -15,17 +15,17 @@ interface ChatSuggestionsProps {
 
 export default function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
   return (
-    <div className="p-4 bg-gray-900/50 border-t border-red-700/30">
-      <p className="text-xs text-gray-400 mb-2 flex items-center gap-2">
+    <div className="p-2 pb-3 bg-gray-900/30 border-t border-red-700/30">
+      <p className="text-xs text-gray-400 mb-2 flex items-center gap-1">
         <MessageCircle className="w-3 h-3" />
-        Preguntas sugeridas:
+        Sugerencias:
       </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-1 gap-1.5">
         {SUGGESTIONS.map((suggestion, index) => (
           <button
             key={index}
             onClick={() => onSuggestionClick(suggestion)}
-            className="text-xs bg-red-900/30 hover:bg-red-800/50 text-red-300 border border-red-700/50 px-3 py-1.5 rounded-full transition-all duration-200 hover:scale-105"
+            className="text-xs bg-red-900/20 hover:bg-red-800/40 text-red-300 border border-red-700/30 px-2.5 py-1 rounded text-left transition-all duration-200 hover:border-red-600/50"
           >
             {suggestion}
           </button>
