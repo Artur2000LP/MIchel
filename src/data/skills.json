@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "name": "Frontend Development",
+      "icon": "💻",
+      "skills": [
+        { "name": "React", "level": 95, "yearsOfExperience": 4 },
+        { "name": "Next.js", "level": 90, "yearsOfExperience": 3 },
+        { "name": "TypeScript", "level": 90, "yearsOfExperience": 3 },
+        { "name": "JavaScript", "level": 95, "yearsOfExperience": 5 },
+        { "name": "HTML/CSS", "level": 95, "yearsOfExperience": 5 },
+        { "name": "Tailwind CSS", "level": 90, "yearsOfExperience": 3 },
+        { "name": "Framer Motion", "level": 80, "yearsOfExperience": 2 }
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "icon": "⚙️",
+      "skills": [
+        { "name": "Node.js", "level": 85, "yearsOfExperience": 4 },
+        { "name": "Python", "level": 80, "yearsOfExperience": 3 },
+        { "name": "REST APIs", "level": 90, "yearsOfExperience": 4 },
+        { "name": "GraphQL", "level": 75, "yearsOfExperience": 2 },
+        { "name": "PostgreSQL", "level": 80, "yearsOfExperience": 3 },
+        { "name": "MongoDB", "level": 85, "yearsOfExperience": 3 }
+      ]
+    },
+    {
+      "name": "Inteligencia Artificial",
+      "icon": "🤖",
+      "skills": [
+        { "name": "OpenAI API", "level": 85, "yearsOfExperience": 2 },
+        { "name": "Claude API", "level": 80, "yearsOfExperience": 1 },
+        { "name": "Vercel AI SDK", "level": 85, "yearsOfExperience": 1 },
+        { "name": "LangChain", "level": 75, "yearsOfExperience": 1 },
+        { "name": "Prompt Engineering", "level": 90, "yearsOfExperience": 2 },
+        { "name": "RAG Systems", "level": 70, "yearsOfExperience": 1 }
+      ]
+    },
+    {
+      "name": "Herramientas & DevOps",
+      "icon": "🛠️",
+      "skills": [
+        { "name": "Git & GitHub", "level": 95, "yearsOfExperience": 5 },
+        { "name": "Vercel", "level": 90, "yearsOfExperience": 3 },
+        { "name": "Docker", "level": 75, "yearsOfExperience": 2 },
+        { "name": "VS Code", "level": 95, "yearsOfExperience": 5 },
+        { "name": "Figma", "level": 80, "yearsOfExperience": 3 }
+      ]
+    }
+  ]
+}

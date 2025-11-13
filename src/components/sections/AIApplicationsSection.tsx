@@ -132,6 +132,7 @@ export default function AIApplicationsSection() {
                 <YouTubeVideo 
                   videoId={app.videoId}
                   title={app.title}
+                  description={app.description}
                   className="rounded-t-2xl"
                 />
               </div>

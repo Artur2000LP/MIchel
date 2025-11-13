@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Portafolio Interactivo con IA",
+      "description": "Portafolio personal con agente de IA conversacional que responde preguntas sobre experiencia profesional y proyectos en tiempo real.",
+      "category": "Web Development & IA",
+      "technologies": ["Next.js", "TypeScript", "OpenAI API", "Vercel AI SDK", "Tailwind CSS"],
+      "highlights": [
+        "Agente IA con contexto personalizado",
+        "Interfaz de chat en tiempo real",
+        "Integración con EmailJS para contacto",
+        "Despliegue automático en Vercel"
+      ],
+      "image": "/proyectos/portafolio-ia.jpg",
+      "demoUrl": "https://michelpalma.vercel.app",
+      "githubUrl": "https://github.com/tuusuario/portafolio",
+      "status": "En desarrollo",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Sistema de Gestión Educativa",
+      "description": "Plataforma completa para gestión de cursos, estudiantes y contenido educativo con panel administrativo.",
+      "category": "Full Stack",
+      "technologies": ["React", "Node.js", "PostgreSQL", "Express", "Material-UI"],
+      "highlights": [
+        "Dashboard interactivo para profesores",
+        "Sistema de calificaciones automatizado",
+        "Gestión de asistencia con QR",
+        "Reportes y analytics en tiempo real"
+      ],
+      "image": "/proyectos/sistema-educativo.jpg",
+      "demoUrl": "https://demo-educativo.vercel.app",
+      "githubUrl": "https://github.com/tuusuario/sistema-educativo",
+      "status": "Completado",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Chatbot IA para E-commerce",
+      "description": "Asistente virtual inteligente para tienda online que ayuda a los clientes a encontrar productos y resolver dudas.",
+      "category": "IA & Automatización",
+      "technologies": ["Python", "FastAPI", "OpenAI", "React", "WebSocket"],
+      "highlights": [
+        "Comprensión de lenguaje natural",
+        "Recomendaciones personalizadas",
+        "Integración con catálogo de productos",
+        "Análisis de sentimiento del cliente"
+      ],
+      "image": "/proyectos/chatbot-ecommerce.jpg",
+      "demoUrl": "https://chatbot-demo.vercel.app",
+      "githubUrl": "https://github.com/tuusuario/chatbot-ecommerce",
+      "status": "Completado",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Generador de Contenido con IA",
+      "description": "Herramienta que genera contenido para redes sociales, blogs y marketing usando modelos de lenguaje avanzados.",
+      "category": "IA & Productividad",
+      "technologies": ["Next.js", "OpenAI GPT-4", "Anthropic Claude", "Vercel"],
+      "highlights": [
+        "Múltiples modelos de IA",
+        "Templates predefinidos",
+        "Editor con vista previa",
+        "Exportación a múltiples formatos"
+      ],
+      "image": "/proyectos/generador-contenido.jpg",
+      "demoUrl": "https://generador-ia.vercel.app",
+      "status": "Completado",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Dashboard Analytics en Tiempo Real",
+      "description": "Panel de control con visualización de datos en tiempo real para métricas de negocio y KPIs.",
+      "category": "Data Visualization",
+      "technologies": ["React", "D3.js", "WebSocket", "Node.js", "Redis"],
+      "highlights": [
+        "Gráficos interactivos",
+        "Actualización en tiempo real",
+        "Alertas automatizadas",
+        "Exportación de reportes"
+      ],
+      "image": "/proyectos/dashboard-analytics.jpg",
+      "demoUrl": "https://analytics-demo.vercel.app",
+      "status": "Completado",
+      "featured": false
+    }
+  ]
+}

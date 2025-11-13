@@ -1,0 +1,129 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Desarrollo Web Moderno con React y Next.js",
+      "description": "Aprende a crear aplicaciones web profesionales desde cero usando las tecnologías más demandadas del mercado.",
+      "category": "Frontend Development",
+      "level": "Intermedio",
+      "duration": "12 semanas",
+      "sessionsPerWeek": 2,
+      "totalHours": 48,
+      "price": 299,
+      "currency": "USD",
+      "students": 45,
+      "rating": 4.8,
+      "topics": [
+        "Fundamentos de React",
+        "Next.js App Router",
+        "TypeScript esencial",
+        "Styled Components y Tailwind",
+        "API Routes y Backend",
+        "Despliegue en Vercel"
+      ],
+      "requirements": [
+        "Conocimientos básicos de JavaScript",
+        "HTML y CSS fundamentales",
+        "Ganas de aprender"
+      ],
+      "image": "/cursos/react-nextjs.jpg",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "Inteligencia Artificial para Desarrolladores",
+      "description": "Integra IA en tus aplicaciones web. Aprende a usar OpenAI, Claude y crear agentes inteligentes.",
+      "category": "Artificial Intelligence",
+      "level": "Avanzado",
+      "duration": "8 semanas",
+      "sessionsPerWeek": 2,
+      "totalHours": 32,
+      "price": 399,
+      "currency": "USD",
+      "students": 30,
+      "rating": 4.9,
+      "topics": [
+        "APIs de IA (OpenAI, Anthropic)",
+        "Prompt Engineering avanzado",
+        "Vercel AI SDK",
+        "Agentes conversacionales",
+        "RAG y vectorización",
+        "Proyectos prácticos con IA"
+      ],
+      "requirements": [
+        "Experiencia con JavaScript/TypeScript",
+        "Conocimientos de React",
+        "Fundamentos de APIs REST"
+      ],
+      "image": "/cursos/ia-desarrolladores.jpg",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "title": "Full Stack con Node.js y PostgreSQL",
+      "description": "Conviértete en desarrollador Full Stack construyendo APIs robustas y escalables.",
+      "category": "Backend Development",
+      "level": "Intermedio-Avanzado",
+      "duration": "10 semanas",
+      "sessionsPerWeek": 2,
+      "totalHours": 40,
+      "price": 349,
+      "currency": "USD",
+      "students": 38,
+      "rating": 4.7,
+      "topics": [
+        "Node.js y Express avanzado",
+        "PostgreSQL y bases de datos",
+        "Autenticación y seguridad",
+        "Testing y CI/CD",
+        "Docker y despliegue",
+        "Arquitectura de APIs"
+      ],
+      "requirements": [
+        "JavaScript intermedio",
+        "Conceptos de bases de datos",
+        "Terminal y Git básico"
+      ],
+      "image": "/cursos/fullstack-node.jpg",
+      "featured": false,
+      "available": true
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "title": "Consultoría de Carrera en Tech",
+      "description": "Sesión personalizada 1-a-1 para planificar tu carrera en tecnología, revisar portfolio y preparar entrevistas.",
+      "type": "Consultoría",
+      "duration": "60 minutos",
+      "price": 50,
+      "currency": "USD",
+      "format": "Zoom",
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "Code Review y Mentoría",
+      "description": "Revisión detallada de tu código con feedback profesional y mejores prácticas.",
+      "type": "Mentoría",
+      "duration": "45 minutos",
+      "price": 40,
+      "currency": "USD",
+      "format": "Zoom",
+      "available": true
+    },
+    {
+      "id": 3,
+      "title": "Ayuda con Proyecto Personal",
+      "description": "Soluciona problemas técnicos específicos en tu proyecto con ayuda experta.",
+      "type": "Soporte",
+      "duration": "30 minutos",
+      "price": 30,
+      "currency": "USD",
+      "format": "Zoom",
+      "available": true
+    }
+  ]
+}

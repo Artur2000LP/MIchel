@@ -1,0 +1,20 @@
+{
+  "name": "Michel Palma",
+  "title": "Desarrollador Full Stack & Instructor de Tecnología",
+  "bio": "Desarrollador apasionado por la tecnología y la enseñanza. Especializado en desarrollo web moderno con React, Next.js y la integración de Inteligencia Artificial en aplicaciones prácticas.",
+  "location": "Perú",
+  "email": "contacto@michelpalma.com",
+  "phone": "+51 999 999 999",
+  "website": "https://michelpalma.com",
+  "social": {
+    "github": "https://github.com/tuusuario",
+    "linkedin": "https://linkedin.com/in/tuusuario",
+    "twitter": "https://twitter.com/tuusuario"
+  },
+  "avatar": "/miPerfil/avatar.jpg",
+  "resume": "/miPerfil/cv-michel-palma.pdf",
+  "availability": "Disponible para proyectos y consultoría",
+  "yearsOfExperience": 5,
+  "studentsTeached": 200,
+  "projectsCompleted": 50
+}
